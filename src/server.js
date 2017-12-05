@@ -35,7 +35,7 @@ function lookupPerson(field, value, row_only) {
 function updatePerson(lookup_field, lookup_value, update_field, update_value) {
     var row = lookupPerson(lookup_field, lookup_value, row_only = true);
     var person = getUser(row);
-    users_range.setValue(row + 1, headers.indexOf(update_field) + 1, update_value);
+    users_sheet.getRange(row + 1, headers.indexOf(update_field) + 1).setValue(update_value);
 }
 
 function tests() {
