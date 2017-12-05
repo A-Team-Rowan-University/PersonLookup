@@ -16,7 +16,7 @@ function getUser(row) {
     return user;
 }
 
-function lookupPerson(field, value, row_only = false) {
+function lookupPerson(field, value, row_only) {
     var column = headers.indexOf(field);
 
     var values = users_range.getValues();
@@ -25,7 +25,7 @@ function lookupPerson(field, value, row_only = false) {
         if (values[row][column] === value) {
             if(row_only) {
                 return row;
-            else {
+            } else {
                 return getUser(row);
             }
         }
